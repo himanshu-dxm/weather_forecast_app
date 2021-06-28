@@ -44,3 +44,17 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+
+# The bugs present in current version:-
+# ->	It searches only by city name of only India due to the API used.
+# ->	The search happens when you type city name in CamelCase -> press enter -> then cancel the search.
+# ->	A city named "Thang" appears after every first searach due to null present in search bar .
+# ->	Sometimes the background image are same for different weather types due to lack of proper resources of images.
+# ->	App dosent gets installed on redmi devices.
+# ->	The menu option is still not developed.
+# ->	The initial three cities{Kolkata,London,NewYork} are predefined static data.
+# ->	Their values are not real.
+# ->	The app working starts with the first search and then we get real data from openweather api.
+
+# I would work upon these later and improve the app further ;)
