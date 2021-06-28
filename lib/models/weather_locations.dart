@@ -103,14 +103,32 @@ Future fetchWeather(String city) async {
 
   if (response.statusCode == 200) {
     weather = WeatherLocations.fromJson(jsonDecode(response.body));
+    WeatherLocations temp = WeatherLocations(cloud: 0,
+        city: "",
+        dateTime: "",
+        temperature: "",
+        weatherType: "",
+        iconUrl: "",
+        wind: 0,
+        pressure: 0,
+        humidity: 0
+    );
     // print(weather.iconUrl.runtimeType);
-    if(locationList.contains()) {
-      
+    var existingLocation = locationList.firstWhere((element) =>
+    weather.city == element.city,
+      orElse: () => temp);
+    // print(existingLocation.city);
+    if(existingLocation == temp) {
+      locationList.add(weather);
+      // print("in if");
     } else {
-      
+      locationList.remove(existingLocation);
+      locationList.add(weather);
+      // print("In else");
     }
-    locationList.add(weather);
+
   } else {
+    print("Exception occured");
     throw Exception('Failed to load Weather!!');
   }
   return null;

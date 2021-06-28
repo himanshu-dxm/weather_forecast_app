@@ -14,7 +14,7 @@ class _HomePageState extends State<HomePage> {
   int _currentPage = 0;
   String _bgImg = "";
 
-  String cityQuery = "Ranchi";
+  String cityQuery = "Delhi";
   
   String _searchText = "";
   Icon _searchIcon = Icon(Icons.search);
@@ -77,14 +77,17 @@ class _HomePageState extends State<HomePage> {
                       filled: true,
                     ),
                   );
+                  // print(cityQuery);
                 } else {
                   this._searchIcon = new Icon(Icons.search);
                   this._appBarTitle = new Text("");
                   this.appBarColor = Colors.transparent;
-                  myController.clear();
+                  // print(cityQuery);
+                  // myController.clear();
                 }
                 cityQuery = myController.text;
               });
+              // print(cityQuery);
               fetchWeather(cityQuery);
             },
           ),
