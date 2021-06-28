@@ -18,7 +18,7 @@ class _HomePageState extends State<HomePage> {
   
   String _searchText = "";
   Icon _searchIcon = Icon(Icons.search);
-  Widget _appBarTitle = Text( 'Search Example' );
+  Widget _appBarTitle = Text( '' );
   final myController = TextEditingController();
 
   @override
