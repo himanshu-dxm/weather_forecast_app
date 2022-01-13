@@ -39,10 +39,10 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
 
-    if(locationList[_currentPage].weatherType.toLowerCase() == "sunny") {
+    if(locationList[_currentPage].weatherType.toLowerCase() == "sunny" || locationList[_currentPage].weatherType.toLowerCase() == "clear" ) {
       _bgImg = 'assets/sunny.jpg';
     } else if(locationList[_currentPage].weatherType.toLowerCase() == "cloudy" ||
-    locationList[_currentPage].weatherType.toLowerCase() == "Clouds") {
+    locationList[_currentPage].weatherType.toLowerCase() == "clouds") {
       _bgImg = 'assets/cloudy.jpeg';
     } else if(locationList[_currentPage].weatherType.toLowerCase() == "night") {
       _bgImg = 'assets/night.jpg';
@@ -53,6 +53,7 @@ class _HomePageState extends State<HomePage> {
     }
 
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: "Title",
       home: Scaffold(
         extendBodyBehindAppBar: true,
